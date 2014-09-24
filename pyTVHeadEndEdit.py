@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import os, sys, argparse
 g_ChannelDir  = "channels"
 g_ChannelFile = "channels.csv"
@@ -26,8 +27,8 @@ def readChannels():
         ChannelFileContent = ChannelFileFH.readlines()
         ChannelFileFH.close()
         Line = ""
-        for ChannelFileLine in ChannelFileContent:
-            Line = Line + ChannelFileLine.replace("\n", "")
+        for ChannelFileContentLine in ChannelFileContent:
+            Line = Line + ChannelFileContentLine.replace("\n", "")
         for ChannelKey in g_ChannelKeys:
             KeyValue = ""
             ChannelKeyStr = "\"" + ChannelKey + "\": "
@@ -52,13 +53,14 @@ def readChannels():
 
 
 def readChannelFile():
+    dprint("open csv file: " + g_ChannelFile)
     ChannelFileFH = open(g_ChannelFile)
     ChannelFileContent = ChannelFileFH.readlines()
     ChannelFileFH.close()
     ChannelFileDict = {}
     i = 0
     for ChannelFileLine in ChannelFileContent:
-        if ChannelFileLine.find("#") != 0:
+        if ChannelFileLine.find("#") != 0: # "#" is the comment string (has to be at the first place in the line)
             if ChannelFileLine.count(";") == 4:
                 i = i + 1
                 ChannelName, ChannelIcon, ChannelTags, ChannelPre, ChannelPost = ChannelFileLine.split(";")
@@ -124,11 +126,11 @@ def printChannelsCsv(p_dChannelDict):
         print(ChannelSort[channel])
 
 
-def getChannelKeyValue(p_sChannelContent, p_sKey):
+def getChannelKeyValue(p_sChannelContent, p_sChannelKey):
     if p_sChannelContent.count(";") != 5:
         eprint("Wrong input format in getChannelKeyValue")
     g_ChannelKeys["name"], g_ChannelKeys["icon"], g_ChannelKeys["tags"], g_ChannelKeys["dvr_extra_time_pre"], g_ChannelKeys["dvr_extra_time_post"], g_ChannelKeys["channel_number"] = p_sChannelContent.split(";")
-    return g_ChannelKeys[p_sKey]
+    return g_ChannelKeys[p_sChannelKey]
 
 
 def insertChannelFiles(p_dChannelDict, p_dChannelsFile):
@@ -150,20 +152,20 @@ def insertChannelFiles(p_dChannelDict, p_dChannelsFile):
             writeChannelFile(g_ChannelDir + os.sep + str(MaxFileName), ChannelsLine, ChannelIcon, ChannelTags, ChannelPre, ChannelPost, ChannelNumber)
 
 
-def parseChannelFiles(p_dChannelDict, p_sChannelsFileContent):
+def parseChannelFiles(p_dChannelDict, p_sChannelKey):
     Error = False
-    for ChannelsLine in p_sChannelsFileContent:
+    for ChannelKey in p_sChannelKey:
         ChannelFound = 0
-        for Channel in p_dChannelDict:
-            if getChannelKeyValue(p_dChannelDict[Channel], "name") == ChannelsLine:
+        for ChannelFile in p_dChannelDict:
+            if getChannelKeyValue(p_dChannelDict[ChannelFile], "name") == ChannelKey:
                 ChannelFound = ChannelFound + 1
-                dprint("Channel \"" + ChannelsLine + "\" is in File \"" + Channel + "\" defined.")
+                dprint("Channel \"" + ChannelKey + "\" is in File \"" + ChannelFile + "\" defined.")
         if ChannelFound == 0:
             Error = 1
-            wprint("Channel \"" + ChannelsLine + "\" not found in channel files.")
+            wprint("Channel \"" + ChannelKey + "\" not found in channel files.")
         if ChannelFound > 1:
             Error = 1
-            wprint("Channel \"" + ChannelsLine + "\" found in " + str(ChannelFound) + " files.")
+            wprint("Channel \"" + ChannelKey + "\" found in " + str(ChannelFound) + " files.")
     return Error
 
 
@@ -274,9 +276,9 @@ DictChannelFile = readChannelFile()
 
 if (args.output == False) and (args.print_ == False) and (args.add == False) and (args.remove == False) and (args.update == False) and (args.sort == False):
     insertChannelFiles(DictChannels, DictChannelFile)
-    deleteChannelFiles(DictChannels, DictChannelFile.keys())
+    #deleteChannelFiles(DictChannels, DictChannelFile.keys())
     changeChannelFiles(DictChannels, DictChannelFile)
-    sortChannelFiles(DictChannels)
+    #sortChannelFiles(DictChannels)
 else:
     if args.output == True:
         printChannelsCsv(DictChannels)
