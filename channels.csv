@@ -72,8 +72,10 @@ TV Oberfranken;;;0;0
 rhein main tv;;;0;0
 ORF III;http://www.lyngsat-logo.com/hires/oo/orf_3_at.png;;0;0
 TELE 5;http://www.lyngsat-logo.com/hires/tt/tele5_de.png;;0;0
+Welt der Wunder;;;0;0
 13th Street HD;http://www.lyngsat-logo.com/hires/num/13th_street_de.png;;0;0
 Universal HD;;;0;0
+E! Entertainment HD;;;0;0
 Syfy HD;http://www.lyngsat-logo.com/hires/ss/syfy_de.png;;0;0
 Fox HD;http://www.lyngsat-logo.com/hires/ff/fox_global.png;;0;0
 AXN HD;http://www.lyngsat-logo.com/hires/aa/axn_global_hd.png;;0;0
@@ -83,11 +85,12 @@ TNT Glitz HD;http://www.lyngsat-logo.com/hires/tt/tnt_glitz_de.png;;0;0
 Sky Krimi;http://www.lyngsat-logo.com/hires/ss/sky_de_krimi.png;;0;0
 RTL Crime;http://www.lyngsat-logo.com/hires/rr/rtl_crime_de.png;;0;0
 RTL Passion;http://www.lyngsat-logo.com/hires/rr/rtl_passion_de.png;;0;0
+Pro7 FUN HD;;;0;0
 Kinowelt TV;http://www.lyngsat-logo.com/hires/kk/kinowelt_tv.png;;0;0
 Sky 3D;http://www.lyngsat-logo.com/hires/ss/sky_de_3d.png;;0;0
 Romance TV;http://www.lyngsat-logo.com/hires/rr/romance_tv_de.png;;0;0
 Heimatkanal;http://www.lyngsat-logo.com/hires/hh/heimatkanal.png;;0;0
-Classica;http://www.lyngsat-logo.com/hires/cc/classica_de.png;;0;0
+A&E Germany;;;0;0
 Discovery HD;;;0;0
 NatGeo HD;http://www.lyngsat-logo.com/hires/nn/nat_geo_us.png;;0;0
 Nat Geo Wild HD;http://www.lyngsat-logo.com/hires/nn/nat_geo_wild_us.png;;0;0
@@ -128,6 +131,10 @@ MTV HD;;;0;0
 MTV Live HD;;;0;0
 iM1 Hits;;;0;0
 Goldstar TV;;;0;0
+iMusic 1;;;0;0
+Volksmusik TV;;;0;0
+Classica;http://www.lyngsat-logo.com/hires/cc/classica_de.png;;0;0
+Beate-Uhse.TV;;;0;0
 Das Erste;http://www.lyngsat-logo.com/hires/aa/ard_das_erste.png;;0;0
 ZDF;http://www.lyngsat-logo.com/hires/zz/zdf_de.png;;0;0
 Bayerisches FS Süd;http://www.lyngsat-logo.com/hires/bb/br_sud.png;;0;0
@@ -196,6 +203,21 @@ Sky Select 7;;;0;0
 Sky Select 8;;;0;0
 Sky Select 9;;;0;0
 Blue Movie;;;0;0
+Sky Cinema HD;http://www.lyngsat-logo.com/hires/ss/sky_de_cinema_hd.png;;0;0
+Sky Cinema +1;http://www.lyngsat-logo.com/hires/ss/sky_de_cinema_plus1_hd.png;;0;0
+Sky Cinema +24;http://www.lyngsat-logo.com/hires/ss/sky_de_cinema_plus24.png;;0;0
+Sky Action HD;http://www.lyngsat-logo.com/hires/ss/sky_de_action_hd.png;;0;0
+Sky Hits HD;http://www.lyngsat-logo.com/hires/ss/sky_de_hits_hd.png;;0;0
+Sky Comedy;http://www.lyngsat-logo.com/hires/ss/sky_de_comedy.png;;0;0
+Sky Emotion;http://www.lyngsat-logo.com/hires/ss/sky_de_emotion.png;;0;0
+Sky Nostalgie;http://www.lyngsat-logo.com/hires/ss/sky_de_nostalgie.png;;0;0
+MGM HD;http://www.lyngsat-logo.com/hires/mm/mgm_channel_de_hd.png;;0;0
+Disney Cinemagic HD;;;0;0
+Sky Cinema;http://www.lyngsat-logo.com/hires/ss/sky_de_cinema.png;;0;0
+Sky Action;http://www.lyngsat-logo.com/hires/ss/sky_de_action.png;;0;0
+Sky Hits;http://www.lyngsat-logo.com/hires/ss/sky_de_hits.png;;0;0
+MGM;http://www.lyngsat-logo.com/hires/mm/mgm_channel_us.png;;0;0
+Disney Cinemagic;;;0;0
 HITRADIO OE3;;;0;0
 ANTENNE BAYERN;;;0;0
 ROCK ANTENNE;;;0;0
