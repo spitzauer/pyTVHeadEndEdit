@@ -288,6 +288,11 @@ def ExportChannelData(sCSVExport):
                 uprint("Export Channel(" + str(i) + "/" + str(iMaxChannels) + "): " + sFilename + " " + sName + ", " + sProvider + " " + sTags + " (" + sNumber + ")" )
                 if (sPicon.find("**ERROR**") == -1):
                     dChannel[sPicon] = [sNumber, sTags]
+                else:
+                    if sRow[0] == "0":
+                        dprint("No Picon for \"" + sRow[1] + "\", \"" + sRow[2] + "\" defined in file \"" + sCSVImport + "\"!")
+                    else:
+                        wprint("No Picon for \"" + sRow[1] + "\", \"" + sRow[2] + "\" defined in file \"" + sCSVImport + "\"!")
     return dChannel
 
 def ChangeChannelData(sCSVImport):
@@ -316,6 +321,11 @@ def ChangeChannelData(sCSVImport):
                     EditChannelNumberTags(sChannelFileName, sRow[0], lTagsFileName)
                     if (sRow[7].find("**ERROR**") == -1):
                         dChannel[sRow[7]] = [sRow[0], sRow[3]]
+                    else:
+                        if sRow[0] == "0":
+                            dprint("No Picon for \"" + sRow[1] + "\", \"" + sRow[2] + "\" defined in file \"" + sCSVImport + "\"!")
+                        else:
+                            wprint("No Picon for \"" + sRow[1] + "\", \"" + sRow[2] + "\" defined in file \"" + sCSVImport + "\"!")
                 else:
                     uprint("Change Channel(" + str(i-1) + "/" + str(iMaxChannels) + "): Error, Service File with Channel Name " + sRow[1] + " and Channel Provider " + sRow[2] + " not found!")
     return dChannel
